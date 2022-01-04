@@ -1,7 +1,8 @@
 // Set variables for the cards and the sum
 
-let firstCard = 11;
-let secondCard = 11;
+let firstCard = 10;
+let secondCard = 6;
+let cards = [firstCard, secondCard] // array that holds all our cards
 let sum = firstCard + secondCard; 
 
 // Set up game and player status
@@ -22,7 +23,11 @@ let sumEl = document.getElementById("sum-el");
 // Function to start the game
 
 const startGame = () => {
-    cardsEl.textContent = `Cards: ${firstCard}, ${secondCard}`
+    renderGame();
+}
+
+const renderGame = () => {
+    cardsEl.textContent = `Cards: ${cards[0]}, ${cards[1]}`
     sumEl.textContent = `Sum: ${sum}`
 
     if (sum<=20) {
@@ -35,4 +40,12 @@ const startGame = () => {
         isAlive = false
     }
     messageEl.textContent = message;
+}
+
+// Function for new card
+
+const newCard = () => {
+    let card = 5;
+    sum += card;
+    renderGame();
 }

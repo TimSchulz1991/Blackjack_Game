@@ -23,4 +23,7 @@ button {
     font-weight: bold;
     border: none;
     border-radius: 2px;
+    display: block;
+    margin: 5px auto;
+
 }
