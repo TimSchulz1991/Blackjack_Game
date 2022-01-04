@@ -1,7 +1,10 @@
 // Set variables for the cards and the sum
+function randomIntFromInterval(min, max) { // min and max included 
+    return Math.floor(Math.random() * (max - min + 1) + min)
+  } // this function lets us create a random card
 
-let firstCard = 10;
-let secondCard = 6;
+let firstCard = randomIntFromInterval(2, 11);
+let secondCard = randomIntFromInterval(2, 11);
 let cards = [firstCard, secondCard] // array that holds all our cards
 let sum = firstCard + secondCard; 
 
@@ -48,7 +51,7 @@ const renderGame = () => {
 // Function for new card
 
 const newCard = () => {
-    let card = 5;
+    let card = randomIntFromInterval(2, 11);;
     sum += card;
     cards.push(card)
     renderGame();
