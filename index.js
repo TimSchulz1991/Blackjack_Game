@@ -10,15 +10,14 @@ const getRandomCard = () => {
     }
 }
 // Set variables for the cards and the sum
-let firstCard = getRandomCard();
-let secondCard = getRandomCard();
-let cards = [firstCard, secondCard] // array that holds all our cards
-let sum = firstCard + secondCard; 
+
+let cards = [] // array that holds all our cards
+let sum = 0; 
 
 // Set up game and player status
 
 let hasBlackJack = false;
-let isAlive = true;
+let isAlive = false;
 
 // Set up empty message
 
@@ -32,8 +31,13 @@ let sumEl = document.getElementById("sum-el");
 
 // Function to start the game
 
-const startGame = () => {
-    renderGame();
+function startGame() {
+    isAlive = true
+    let firstCard = getRandomCard()
+    let secondCard = getRandomCard()
+    sum = firstCard + secondCard
+    cards = [firstCard, secondCard]
+    renderGame()
 }
 
 const renderGame = () => {
@@ -58,8 +62,10 @@ const renderGame = () => {
 // Function for new card
 
 const newCard = () => {
-    let card = getRandomCard();
-    sum += card;
-    cards.push(card)
-    renderGame();
+    if (!hasBlackJack && isAlive) {
+        let card = getRandomCard();
+        sum += card;
+        cards.push(card)
+        renderGame();
+    }
 }
