@@ -19,6 +19,11 @@ let sum = 0;
 let hasBlackJack = false;
 let isAlive = false;
 
+let player = {
+    name: "Tim",
+    credit: 55
+}
+
 // Set up empty message
 
 let message = "";
@@ -28,6 +33,8 @@ let message = "";
 let messageEl = document.getElementById("message-el");
 let cardsEl = document.getElementById("cards-el");
 let sumEl = document.getElementById("sum-el");
+let playerEl = document.getElementById("player-el");
+playerEl.textContent = `${player.name}: $${player.credit}`;
 
 // Function to start the game
 
